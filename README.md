@@ -15,7 +15,7 @@
 5. Run the compiled file with the `java Main` command.
 
 
-# An example of the program
+# An example of the program usage
 
 Please enter a number greater than 7:
 
@@ -35,7 +35,7 @@ Input: Vyacheslav
 
 Output: Hello, Vyacheslav
 
-Enter the length of the array:
+Enter the length of array (must be greater than zero):
 
 Input: 3
 
@@ -43,9 +43,11 @@ Enter array elements:
 
 Input: 1 2 3
 
-List of elements that are multiples of three:
+Here are all elements from the array divisible by three:
 
 Output: 3
+
+Bye!
 
 
 # Requirements
