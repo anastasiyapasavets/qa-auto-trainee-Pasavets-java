@@ -3,7 +3,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInteraction {
-    Scanner scanner = new Scanner(System.in);
+
+    private String output;
+    private Scanner scanner;
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
     public void greetUserIfInputGreaterThanSeven (){
         int userNumber;
         do {
@@ -14,7 +21,8 @@ public class UserInteraction {
             }
             userNumber = scanner.nextInt();
         } while (userNumber <= 7);
-        System.out.println("Hello!");
+        output = "Hello!";
+        System.out.println(output);
     }
 
     public void getGreetingAndUsernameIfNamesMatch (){
@@ -29,13 +37,16 @@ public class UserInteraction {
                 break;
             }
             if (userName.equalsIgnoreCase("Vyacheslav")) {
-                System.out.println("Hello, " + userName);
+                output = "Hello, " + userName;
+                System.out.println(output);
                 nameMatched = true;
             } else {
-                System.out.println("There is no such name.");
+                output = "There is no such name.";
+                System.out.println(output);
             }
         }
     }
+
     public  int [] getAnArrayFromUserInput(){
         int arrayLength;
         do {
@@ -51,7 +62,7 @@ public class UserInteraction {
         System.out.println("Enter array elements:");
         for (int i = 0; i < arrayLength; i++) {
             while (!scanner.hasNextInt()) {
-                System.out.println("Error! Element of an array must be an integer: ");
+                output = "Error! Element of an array must be an integer: ";
                 scanner.next();
             }
             numbers[i] = scanner.nextInt();
@@ -60,6 +71,7 @@ public class UserInteraction {
     }
 
     public void printArrayElementsDivisibleByThree(int[] userNumbers){
+        StringBuilder outputBuilder = new StringBuilder();
 
         List<Integer> numbers = new ArrayList<>();
         for (int userNumber : userNumbers) {
@@ -69,11 +81,21 @@ public class UserInteraction {
         }
         if (!numbers.isEmpty()){
             System.out.println("Here are all elements from the array divisible by three:");
-            for (int number :numbers) {
-                System.out.println(number);
+            for (int number : numbers) {
+                outputBuilder.append(number).append("\n");
             }
+            output = outputBuilder.toString();
+            System.out.print(output);
         }
-        else System.out.println("There are no elements divisible by three in the array.");
+        else output = "There are no elements divisible by three in the array.";
+
+    }
+
+    public String getOutput(){
+        return output;
+    }
+
+    public void closeScanner() {
         scanner.close();
     }
 }
