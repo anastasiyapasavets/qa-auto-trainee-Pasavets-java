@@ -27,8 +27,8 @@ public class UserInteractionTests {
 
     @Test
     public void shouldGreetUserIfInputGreaterThanSeven() {
-        when(mockedScanner.hasNextInt()).thenReturn(true);
-        when(mockedScanner.nextInt()).thenReturn(8);
+        when(mockedScanner.hasNextDouble()).thenReturn(true);
+        when(mockedScanner.nextDouble()).thenReturn(8.0);
 
         userInteraction.greetUserIfInputGreaterThanSeven();
         String expectedOutput = "Hello!";
@@ -48,9 +48,9 @@ public class UserInteractionTests {
 
     @Test
     public void shouldPrintElementsDivisibleByThree() {
-        int[] userNumbers = {1, 3, 5, 9};
+        double[] userNumbers = {1, 3.0, 5, 9.0};
         userInteraction.printArrayElementsDivisibleByThree(userNumbers);
-        String expectedOutput = "3\n9\n";
+        String expectedOutput = "3.0\n9.0\n";
         String actualOutput = userInteraction.getOutput();
         assertEquals("\nExpected result should be:\n"+expectedOutput+"but was:\n"+actualOutput,expectedOutput, actualOutput);
     }

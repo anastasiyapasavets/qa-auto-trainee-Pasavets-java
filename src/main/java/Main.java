@@ -11,7 +11,7 @@ public class Main {
 
         userInteraction.greetUserIfInputGreaterThanSeven();
         userInteraction.getGreetingAndUsernameIfNamesMatch();
-        int[] numbers = userInteraction.getAnArrayFromUserInput();
+        double[] numbers = userInteraction.getAnArrayFromUserInput();
         userInteraction.printArrayElementsDivisibleByThree(numbers);
 
         userInteraction.closeScanner();
